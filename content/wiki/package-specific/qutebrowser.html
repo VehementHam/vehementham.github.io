@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Qutebrowser - Wiki</title>
+    <style type="text/css">
+      body {
+        margin: 40px auto;
+        max-width: 650px;
+        line-height: 1.6;
+        font-size: 18px;
+        padding: 0 10px;
+        color: #c5c8c6;
+        background-color: #1d1f21
+      } h1, h2, h3, h4, h5, h6 {
+        line-height: 1.2
+      } b, pre {
+        font-family: monospace;
+        font-weight: normal;
+        font-size: 14px;
+      } h1, h2, h3, h4 {
+        border-bottom: 1px solid #929593
+      } h2 {
+        font-size: 28px
+      } h3 {
+        font-size: 24px
+      } h4 {
+        font-size: 22px
+      } h5 {
+        font-size: 19.5px
+      } h6 {
+        font-size: 18.5px
+      } a:link {
+        color: #81a2be
+      } a:visited {
+        color: #682a9b
+      }
+    </style>
+    <link rel="stylesheet" href="../../../css/highlight.css">
+  </head>
+  <body>
+    <h1>Qutebrowser</h1>
+
+    <i>5/16/2024</i>
+
+    <h2>Intro</h2>
+
+    <p>
+    This is my first entree to the package-specific wiki.
+    </p>
+
+    <p>
+    Qutebrowser is perhaps my favorite application that I use everyday. It is extremely efficient to use, highly configurable, and quite minimal (though it is written in Python).
+    </p>
+
+    <h2>What Qutebrowser is</h2>
+
+    <p>
+    Qutebroweser is a keyboard driven <strong>web browser</strong>, written and configured it Python.
+    </p>
+
+    <p>
+    <i>See <a href="https://www.qutebrowser.org/index.html">qutebrowser.org</a>.</i>
+    </p>
+
+    <h2>Installing and Running</h2>
+
+    <h3>Distribution's Main Package Manager</h3>
+
+    <p>
+    Qutebrowser is available in the repositories of most package managagers. For example, to install with the <b>apk</b> package manager, run:
+    </p>
+
+<div class="highlight"><pre><span></span>apk<span class="w"> </span>add<span class="w"> </span>qutebrowser<span class="w"> </span><span class="c1"># as root</span>
+</pre></div>
+
+    <p>
+    Qutebrowser should be in the <b>$PATH</b> as <b>qutebrowser</b>, meaning that you can execute Qutebrowser simply with the command <b>qutebrowser</b>.
+    </p>
+
+    <h3>Flatpak</h3>
+    
+    <p>
+    Flatpak will need to be installed, and the Flathub repository will need to be added.
+    </p>
+
+    <p>
+    <i>For instructions on setting up flatpak, see <a href="https://flatpak.org/setup/">flatpak.org/setup<a>.</i>
+    </p>
+
+    <h4>Installing</h4>
+
+    <h5>Meathod 1: Installing with the App ID</h5>
+    
+    <p>
+    To install Qutebrowser as a flatpak by specifying the Application ID, run the following command:
+    </p>
+
+<div class="highlight"><pre><span></span><span class="c1"># System installation</span>
+flatpak<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>org.qutebrowser.qutebrowser<span class="w"> </span><span class="c1"># as root if not in `wheel` group</span>
+
+<span class="c1"># User installation</span>
+flatpak<span class="w"> </span>install<span class="w"> </span>org.qutebrowser.qutebrowser
+</pre></div>
+
+    <h5>Meathod 2: Installing with a <span style="font-family: monospace">flatpakref</span> File</h5>
+
+    <p>
+    Another meathod of installation is to install with a <b>flatpakref</b>. First, one must download the <b>flatpakref</b> file. You can do that by going to <a href="https://flathub.org/apps/org.qutebrowser.qutebrowser">Qutebrowser</a> page on the Flathub site and clicking the <strong>Install</strong> button, or by running the following command (in the directory that you want the <b>flatpakref</b> to be installed to).
+    </p>
+
+    <pre>wget https://dl.flathub.org/repo/appstream/org.qutebrowser.qutebrowser.flatpakref</pre>
+
+    <p>
+    <i>See the wget page.</i>
+    </p>
+
+    <p>
+    Now you can run the <b>flatpak</b> command on the file.    
+    </p>
+
+<div class="highlight"><pre><span></span><span class="c1"># System installation</span>
+flatpak<span class="w"> </span>install<span class="w"> </span>org.qutebrowser.qutebrowser.flatpakref<span class="w"> </span><span class="c1"># as root if not in `wheel` group</span>
+
+<span class="c1"># User installation</span>
+flatpak<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>org.qutebrowser.qutebrowser.flatpakref
+</pre></div>
+
+    <p>
+    If you installed the <b>flatpakref</b> through your web browser and cannot find it run:
+    </p>
+
+    <pre>find / -name org.qutebrowser.qutebrowser.flatpakref</pre>
+
+    <p>
+    That will return the file location of the <b>flatpakref</b>.
+    </p>
+
+    <h5>Meathod 3: Installing with a GUI</h5>
+
+    <p>
+    To install Qutebrowser as a flatpak through a GUI, the propor plugin package(s) need to be installed. For example to install the plugins with the <b>apk</b> package manager run the following commands:
+    </p>
+
+<div class="highlight"><pre><span></span><span class="c1"># To install for Gnome Software</span>
+apk<span class="w"> </span>add<span class="w"> </span>gnome-software-plugin-flatpak<span class="w"> </span><span class="c1"># as root</span>
+
+<span class="c1"># To install for KDE Discover</span>
+apk<span class="w"> </span>add<span class="w"> </span>discover-backend-flatpak<span class="w"> </span><span class="c1"># as root</span>
+</pre></div>
+
+    <p>
+    <i>Once again, for details on setup for various distributions, see <a href="https://flatpak.org/setup/">flatpak.org/setup</a></i>
+    </p>
+
+    <p>
+    Now Qutebrowser should be available as a flatpak through the Gnome Software or KDE Discover GUI package managers.
+    </p>
+
+    <h4>Running</h4>
+
+    <p>
+    To run qutebrowser, you can do one of two things.
+    </p>
+
+    <h5>Meathod 1: Putting Qutebrowser in the <span style="font-family: monospace">$PATH</span></h5>
+    
+    <p>
+    One meathod is to add the executable to the <b>$PATH</b> by first locating the executable. The executable should be in <b>/var/lib/flatpak/exports/bin</b> if installed as a system Flatapak or <b>~/.local/share/flatpak/exports/bin</b> if installed as a user flatpak. Just to make sure, use the <b>find</b> command on the two directories.
+    </p>
+
+<!--
+    <p>
+    When using the <b>find</b> command on directories outside <b>$HOME</b>, the command requires <b>root</b> permissions. 
+    </p>
+-->
+
+<div class="highlight"><pre><span></span><span class="c1"># System installation</span>
+flatpak<span class="w"> </span>install<span class="w"> </span>org.qutebrowser.qutebrowser<span class="w"> </span><span class="c1"># as root if not in `wheel` group</span>
+
+<span class="c1"># User installation</span>
+flatpak<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>org.qutebrowser.qutebrowser<span class="w"> </span>
+</pre></div>
+
+    <p>
+    The output will be the location of the executable, (i.e <b>/var/lib/flatpak/exports/bin/org.qutebrowser.qutebrowser</b>). Create a soft link between the exectuable, and the new location in <b>/usr/local/bin</b> (or another location in the <b>$PATH</b>). <!-- If the path of the executable is outside of the <b>$HOME</b> directory, run the command as root. -->
+    </p>
+
+<div class="highlight"><pre><span></span>ln<span class="w"> </span>-s<span class="w"> </span>/var/lib/flatpak/exports/bin/org.qutebrowser.qutebrowser<span class="w"> </span>/usr/local/bin/qutebrowser<span class="w"> </span><span class="c1"># as root</span>
+</pre></div>
+
+    <p>
+    Now you can execute Qutebrowser with the command <b>qutebrowser</b>.
+    </p>
+
+    <h5>Meathod 2: Executing Qutebrowser by Using the <span style="font-family: monospace">flatpak</span> Command</h5>
+
+    <p>
+    The other meathod is to simply execute Qutebrowser with the <b>flatpak</b> command.
+    </p>
+
+    <pre>flatpak run org.qutebrowser.qutebrowser</pre>
+
+    <h3>Compiling Qutebrowser from Soruce</h3> 
+
+
+    
+
+  </body>
+</html>
+
